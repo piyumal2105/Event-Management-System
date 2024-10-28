@@ -7,8 +7,23 @@ $stmt->execute();
 $result = $stmt->get_result();
 $event = $result->fetch_assoc();
 ?>
-<h1><?php echo $event['name']; ?></h1>
-<p>Description: <?php echo $event['description']; ?></p>
-<p>Date: <?php echo $event['date']; ?></p>
-<p>Location: <?php echo $event['location']; ?></p>
-<a href="index.php">Back to Event List</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="styles/event.css">
+</head>
+<body>
+
+<div class="event-details">
+    <h1><?php echo htmlspecialchars($event['name']); ?></h1>
+    <p class="description">Description: <?php echo htmlspecialchars($event['description']); ?></p>
+    <p class="date">Date: <?php echo htmlspecialchars($event['date']); ?></p>
+    <p class="location">Location: <?php echo htmlspecialchars($event['location']); ?></p>
+    <a href="index.php" class="back-button">Back to Event List</a>
+</div>
+
+</body>
+</html>

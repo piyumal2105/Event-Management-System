@@ -10,6 +10,7 @@
         function filterEvents() {
             const searchValue = document.getElementById('searchInput').value.toLowerCase();
             const events = document.getElementsByClassName('event');
+            const location = document.getElementsByClassName('location');
 
             for (let event of events) {
                 const eventName = event.getElementsByTagName('h3')[0].textContent.toLowerCase();

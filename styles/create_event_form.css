@@ -55,12 +55,13 @@ textarea:focus {
 }
 
 /* Button Styling */
-button {
+.button {
     display: inline-block;
-    width: 100%;
+    width: 607px;
     padding: 12px;
-    background-color: #3498db;
-    color: #ffffff;
+    /* background-color: #3498db; */
+    background-image: linear-gradient(to bottom right, red, yellow);
+    color: white;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -69,7 +70,7 @@ button {
     margin-top: 20px;
 }
 
-button:hover {
+.button:hover {
     background-color: #2c80b4;
 }
 

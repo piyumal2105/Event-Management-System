@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f3f4f6;
@@ -15,7 +14,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Form and Event Container Styles */
 form, .event {
     background: #ffffff;
     padding: 20px;
@@ -26,14 +24,12 @@ form, .event {
     max-width: 600px;
 }
 
-/* Label and Input Styles */
 label {
     font-weight: bold;
     color: #333;
     margin-top: 10px;
 }
 
-/* Custom Input Field Styles */
 input[type="text"],
 input[type="date"],
 textarea {
@@ -48,7 +44,6 @@ textarea {
     background-color: #f9fafb;
 }
 
-/* Add focus effect for better user experience */
 input[type="text"]:focus,
 input[type="date"]:focus,
 textarea:focus {
@@ -57,7 +52,6 @@ textarea:focus {
     outline: none;
 }
 
-/* Search Input Field Styles */
 #searchInput {
     margin-bottom: 15px;
     font-size: 1rem;
@@ -81,7 +75,6 @@ textarea:focus {
     outline: none;
 }
 
-/* Button Styles */
 button {
     padding: 10px 15px;
     margin-top: 10px;
@@ -93,7 +86,6 @@ button {
     color: white;
 }
 
-/* Specific Button Styles */
 button:hover {
     opacity: 0.9;
 }
@@ -104,15 +96,37 @@ button[onclick*="create_event.php"] {
 
 button[onclick*="event_details.php"] {
     width: 150px;
-    background-color: #5cb85c;
+    background-image: linear-gradient(to bottom right, #f8d9a0, #f7c74e);
 }
 
 button[onclick*="delete_event.php"] {
     width: 150px;
-    background-color: #e74c3c;
+    background-image: linear-gradient(to bottom right, #f36f6f, #ff3b3b);
 }
 
-/* Events Container Grid */
+.create-event-icon {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    background-image: linear-gradient(to bottom right, red, yellow);
+    color: white;
+    border: none;
+    border-radius: 30%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.create-event-icon:hover {
+    background-color: #2980b9;
+}
+
 .events-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -122,7 +136,6 @@ button[onclick*="delete_event.php"] {
     margin-top: 20px;
 }
 
-/* Each Event Card */
 .event {
     background: #ffffff;
     padding: 20px;
@@ -132,9 +145,16 @@ button[onclick*="delete_event.php"] {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Event Display Styling */
+/* Hover Effect */
+.event:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+
 .event h3 {
     margin: 0 0 10px;
     color: #333;
@@ -146,7 +166,6 @@ button[onclick*="delete_event.php"] {
     color: #555;
 }
 
-/* Button Container for Row Layout */
 .button-container {
     display: flex;
     gap: 10px;
@@ -154,13 +173,12 @@ button[onclick*="delete_event.php"] {
     margin-top: 15px;
 }
 
-/* Pagination Styling */
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    gap: 10px;
+    margin-top: 100px;
+    gap: 20px;
 }
 
 .pagination a, .pagination strong {
@@ -168,19 +186,20 @@ button[onclick*="delete_event.php"] {
     padding: 8px 12px;
     border-radius: 5px;
     font-size: 1rem;
-    color: #3498db;
+    color: #ffffff;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    border: 1px solid #ddd;
+    background-color: #007BFF;
+    border: 1px solid #007BFF;
 }
 
 .pagination a:hover {
-    background-color: #3498db;
+    background-color: #0056b3;
     color: white;
 }
 
 .pagination strong {
-    background-color: #3498db;
+    background-color: #0056b3;
     color: white;
-    border: 1px solid #3498db;
+    border: 1px solid #0056b3;
 }

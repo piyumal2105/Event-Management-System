@@ -10,7 +10,6 @@
         function filterEvents() {
             const searchValue = document.getElementById('searchInput').value.toLowerCase();
             const events = document.getElementsByClassName('event');
-            const location = document.getElementsByClassName('location');
 
             for (let event of events) {
                 const eventName = event.getElementsByTagName('h3')[0].textContent.toLowerCase();
@@ -26,24 +25,13 @@
     </script>
 </head>
 <body>
-
-    <button onclick="window.location.href='create_event.php'">Create New Event</button>
     <h1>Events</h1>
-
     <input type="text" id="searchInput" onkeyup="filterEvents()" placeholder="Search events by name or location...">
-
     <div class="events-container">
         <?php
-        // Set the number of events per page to 6
         $limit = 6;
-
-        // Get the current page number from the URL, defaulting to 1 if not set
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
-        // Calculate the offset for the SQL query
         $offset = ($page - 1) * $limit;
-
-        // Fetch events for the current page
         $result = $conn->query("SELECT id, name, date, location FROM events LIMIT $limit OFFSET $offset");
 
         if ($result->num_rows > 0) {
@@ -65,18 +53,14 @@
     </div>
 
     <?php
-    // Count total number of events
     $total_events_result = $conn->query("SELECT COUNT(id) AS total FROM events");
     $total_events_row = $total_events_result->fetch_assoc();
     $total_events = $total_events_row['total'];
-
-    // Calculate total pages
     $total_pages = ceil($total_events / $limit);
 
-    // Display pagination
     echo '<div class="pagination">';
     if ($page > 1) {
-        echo '<a href="?page=' . ($page - 1) . '">Previous</a>';
+        echo '<a href="?page=' . ($page - 1) . '"> << </a>';
     }
 
     for ($i = 1; $i <= $total_pages; $i++) {
@@ -88,10 +72,13 @@
     }
 
     if ($page < $total_pages) {
-        echo '<a href="?page=' . ($page + 1) . '">Next</a>';
+        echo '<a href="?page=' . ($page + 1) . '"> >> </a>';
     }
     echo '</div>';
     ?>
 
+    <button class="create-event-icon" onclick="window.location.href='create_event.php'">
+        +
+    </button>
 </body>
 </html>

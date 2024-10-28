@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root"; // MAMP default MySQL password
+$password = "root";
 $dbname = "event_management";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

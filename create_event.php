@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("ssss", $name, $description, $date, $location);
         $stmt->execute();
         $stmt->close();
-        header("Location: index.php"); // Redirect after event creation
+        header("Location: index.php");
         exit();
     } else {
         echo "<p class='error'>Please fill all required fields.</p>";
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="location">Location:</label>
                 <input type="text" id="location" name="location" required>
             
-                <button type="submit">Create Event</button>
+                <button type="submit" class="button">Create Event</button>
             </form>
         </div>
         

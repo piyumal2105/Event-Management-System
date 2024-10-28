@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Management System</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/index.css">
     <script>
         function filterEvents() {
             const searchValue = document.getElementById('searchInput').value.toLowerCase();
@@ -29,7 +29,7 @@
     <input type="text" id="searchInput" onkeyup="filterEvents()" placeholder="Search events by name or location...">
     <div class="events-container">
         <?php
-        $limit = 6;
+        $limit = 5;
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $offset = ($page - 1) * $limit;
         $result = $conn->query("SELECT id, name, date, location FROM events LIMIT $limit OFFSET $offset");
